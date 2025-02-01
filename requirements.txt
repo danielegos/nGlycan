@@ -57,4 +57,4 @@ six==1.16.0
 #from collections import deque
 #from prettytable import PrettyTable
 
-prettytable=3.14.0
+prettytable==3.14.0
