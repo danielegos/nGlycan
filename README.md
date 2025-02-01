@@ -23,7 +23,7 @@ This Python program allows the user to interactively create a grid of nodes and 
 ### 1. Running the Program
 To run the program, execute the script with Python:
 ```bash
-python nglycan_dci.py
+python nglycan_dci_0.01.py
 ```
 
 ### 2. Interacting with the Interface
