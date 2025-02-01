@@ -48,3 +48,13 @@ seaborn==0.10.1
     # via -r requirements.in
 six==1.16.0
     # via python-dateutil
+
+
+#import tkinter as tk
+#import math
+#import os
+#import sys
+#from collections import deque
+#from prettytable import PrettyTable
+
+prettytable=3.14.0
