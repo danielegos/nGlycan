@@ -1,58 +1,122 @@
-# N-Glycan DCI v0.01
+# **GlycoAssessor**
 
-## Overview
-This Python program allows the user to interactively create a grid of nodes and edges representing an N-glycan structure. It includes features to add and remove nodes and edges, and calculates a "Distance & Connectivity Index (DCI)" based on the structure. The program uses a graphical interface built with Tkinter.
+GlycoAssessor is a Python application designed to calculate and visualize Distance & Connectivity Index (DCI) and Position & Composition Index (PCI) scores for N-glycan structures. The tool helps users assess the spatial and structural properties of glycan molecules by analyzing the relationships between monosaccharide nodes and their glycosidic linkages.
 
-## Features
-- **Grid Creation**: Visualize and manipulate a grid where nodes (vertices) can be added and connected.
-- **Node and Edge Management**: Add, remove, and modify nodes and edges.
-- **DCI Calculation**: Compute a Distance & Connectivity Index (DCI) score, which is a weighted sum based on node distances and degrees.
-- **Graphical Interface**: Intuitive GUI with buttons for managing the grid and calculating the DCI score.
-- **Pathfinding and Degree Counting**: Automatically calculates paths from each node to the base node and counts the degree of each node.
+---
 
-## Requirements
+## **Features**
+
+- **Distance & Connectivity Index (DCI)**: 
+  - Computes scores for each node based on the number of second, third, and fourth-degree connections.
+  - Displays results in a weighted matrix and exports data as a CSV file.
+
+- **Position & Composition Index (PCI)**:
+  - Computes layer-based scores based on node colors, layer size, and inter-layer connectivity.
+  - Displays results in a detailed matrix and exports data as a CSV file.
+
+- **Node Layering and Connectivity Visualization**:
+  - Organizes nodes into layers based on x-coordinates.
+  - Computes inter-layer linkages and linkage types for each layer.
+
+- **Image Export**:
+  - Allows users to export the current N-glycan structure as an image (PNG format).
+
+---
+
+## **Requirements**
+
 - Python 3.x
-- Tkinter library (usually pre-installed with Python)
-- PrettyTable library (for displaying tables):
-  ```bash
-  pip install prettytable
-  ```
+- Libraries:
+  - `tkinter` (for the graphical user interface)
+  - `pandas` (for data manipulation and exporting to CSV)
+  - `PrettyTable` (for tabular data display)
+  - `Pillow` (for image export functionality)
 
-## Usage
+---
 
-### 1. Running the Program
-To run the program, execute the script with Python:
-```bash
-python nglycan_dci_0.01.py
+## **Installation**
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/glycoassessor.git
+   cd glycoassessor
+   ```
+
+2. **Install dependencies:**
+   Ensure you have Python 3 installed, then install the required libraries:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## **Usage**
+
+1. **Launch the Application:**
+   To run the application, use the following command:
+   ```bash
+   python main.py
+   ```
+
+2. **Modes:**
+   - **Calculate DCI Mode**: Computes the Distance & Connectivity Index score for the structure.
+   - **Calculate PCI Mode**: Computes the Position & Composition Index score for the structure.
+   - **Export Image Mode**: Allows users to export the structure visualization as a PNG image.
+
+---
+
+## **Data Input**
+
+The application requires the following data input:
+
+- **Monosaccharide Nodes (Circles)**: A dictionary where each node is represented by its ID, position (x, y), and color.
+- **Glycosidic Linkages (Edges)**: A dictionary where each edge connects two nodes and has an associated edge type.
+
+Example:
+```python
+circles = {
+    'A': (0, 0, 'red'),
+    'B': (1, 0, 'blue'),
+    'C': (2, 1, 'green')
+}
+edges = {
+    1: ((0, 0), (1, 0), 'alpha'),
+    2: ((1, 0), (2, 1), 'beta')
+}
 ```
 
-### 2. Interacting with the Interface
-- **Add Circle**: Click on the grid to add nodes. The first node placed is the base node.
-- **Remove Circle**: Click on an existing node to remove it.
-- **Add Edge**: Click two different nodes to add an edge between them.
-- **Remove Edge**: Click an existing edge to remove it.
-- **Calculate DCI**: After creating the graph, click this button to calculate the DCI score based on the node connections.
+---
 
-### 3. Instructions
-The grid represents an N-glycan structure. The first node you place is the base node, and subsequent nodes are added with constraints based on distance and alignment.
+## **Exporting Data**
 
-### 4. Resetting the Program
-Click the **Reset Program** button to clear the grid and start over.
+After running the calculations, you can export the results to a CSV file, which will include:
 
-### 5. Output
-The program prints the following information:
-- The weighted matrix for the N-glycan structure.
-- The Distance & Connectivity Index (DCI) score for the structure.
+- **DCI Matrix**: Weighted matrix showing node scores based on their connectivity.
+- **PCI Matrix**: Layer-wise matrix showing scores based on node composition and inter-layer linkages.
 
-## Assumptions
-1. The first circle added is the base node.
-2. Only edges between adjacent nodes can be drawn.
-3. No fucosylation occurs at the base node.
-4. The graph is undirected, and edges are added between two nodes only.
+---
 
-## File Structure
-- **nglycan_dci.py**: Main script containing the application code.
-- **output.txt**: (Optional) If directed, the output will be saved to a text file.
+## **License**
 
-## License
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## **Contributing**
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a pull request.
+
+---
+
+## **Acknowledgements**
+
+- Thanks to the Python community and the open-source libraries used in this project.
+- Special thanks to contributors at the Tissue Spatial Geometrics Lab (https://www.tsg-lab.org/) and users for testing and providing feedback.
+
+---
+
+Feel free to edit this README based on any additional details specific to your app.
