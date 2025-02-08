@@ -1,0 +1,9 @@
+Node,Steps to Base Node,2ndDeg Nodes⹋ * 2,3rdDeg Nodes⹋ * 3,4thDeg Nodes⹋ * 4,Node Score,2ndDeg Nodes,3rdDeg Nodes,4thDeg Nodes
+A,0,,,,0,0.0,0.0,0.0
+B,1,,,,1,0.0,0.0,0.0
+C,2,,,,4,2.0,0.0,0.0
+D,3,,,,8,2.0,3.0,0.0
+E,3,,,,8,2.0,3.0,0.0
+F,4,,,,11,4.0,3.0,0.0
+G,4,,,,11,4.0,3.0,0.0
+H,5,,,,14,6.0,3.0,0.0
