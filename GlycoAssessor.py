@@ -285,11 +285,11 @@ class GridApplication:
                                          background="#639F52", foreground="#1E1F22")
         self.pci_calc_button.pack(side="left", padx=5)
 
-        button_r5_c3 = tk.Frame(column_3)
-        button_r5_c3.pack(pady=1, anchor="w")
-        # Button to reset program
-        self.reset_button = tk.Button(button_r5_c3, text="Reset Program", command=self.reset_program, background="#AA4926", foreground="#DFE1E5")
-        self.reset_button.pack(side="left", padx=5)
+        # button_r5_c3 = tk.Frame(column_3)
+        # button_r5_c3.pack(pady=1, anchor="w")
+        # # Button to reset program
+        # self.reset_button = tk.Button(button_r5_c3, text="Reset Program", command=self.reset_program, background="#AA4926", foreground="#DFE1E5")
+        # self.reset_button.pack(side="left", padx=5)
 
 
 
@@ -319,11 +319,14 @@ class GridApplication:
               "\nSelect a linkage type from "
               "the Linkage Menu and then click on two sugar nodes to connect them with the linkage."
               "\nOrient the N-glycan with the base node at the left and the furthest node on the right.")
+
+        print("\nSee video tutorial at this link: https://youtu.be/TVWvqSvYwtQ")
+
         print("\nAssumptions:"
-              "\n1) The first node you add is the base node of the N-glycan. "
+              "\n1) The leftmost node you add is the base node of the N-glycan. "
               "\n2) You will not attempt to duplicate edges."
               "\n3) You will only draw edges between two adjacent nodes."
-              "\n4) You must place Fucosylations at the 2nd level explicitly.")
+              "\n4) You must place base-node Fucosylations at the 2nd level explicitly.\n")
 
 
         # Bind mouse events to canvas
@@ -999,10 +1002,10 @@ class GridApplication:
 
 
 
-    def reset_program(self):
-        self.master.destroy()  # Destroy the current Tkinter root
-        python = sys.executable  # Get the Python executable path
-        os.execl(sys.executable, sys.executable, *sys.argv)
+    # def reset_program(self):
+    #     self.master.destroy()  # Destroy the current Tkinter root
+    #     python = sys.executable  # Get the Python executable path
+    #     os.execl(sys.executable, sys.executable, *sys.argv)
 
     def find_node_degrees(self, edges):
         """Computes the degree of each node in the graph."""
